@@ -1,13 +1,87 @@
-body {
+:root {
+  --Blackish: hsl(0, 0%, 18%);
+  --Slightly-White: hsl(0, 0%, 94%);
+  --Blue: hsl(240, 100%, 50%);
+  --Blue-Op: hsla(240, 100%, 50%, 0.7);
+  --Red: hsl(0, 100%, 50%);
+  --Red-Op: hsla(0, 100%, 50%, 0.7);
+}
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--Blackish);
+}
+.TicTacToe__title {
+  text-align: center;
+  color: var(--Slightly-White);
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+}
+.TicTacToe__description--blue,
+.TicTacToe__description--red {
+  font-size: 2rem;
+  color: var(--Slightly-White);
+  text-align: center;
+  width: 50%;
+  margin: 1rem auto 2rem;
+}
+.TicTacToe__description--blue {
+  background-color: var(--Blue);
+}
+.TicTacToe__description--red {
+  background-color: var(--Red);
+}
+.TicTacToe__container {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.TicTacToe__result,
+.TicTacToe__result--blue,
+.TicTacToe__result--red {
+  display: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  font-size: 3rem;
+  color: var(--Slightly-White);
+}
+.TicTacToe__result--blue {
+  display: grid;
+  place-items: center;
+  background-color: var(--Blue-Op);
+}
+.TicTacToe__result--red {
+  display: grid;
+  place-items: center;
+  background-color: var(--Red-Op);
+}
+.box {
+  min-width: 90px;
+  min-height: 90px;
+  background-color: var(--Slightly-White);
+  margin: 1rem;
+  font-size: 2rem;
+  color: black;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.Xbox {
+  background-color: var(--Red);
+  color: var(--Slightly-White);
+}
+.Obox {
+  color: var(--Slightly-White);
+  background-color: var(--Blue);
 }
