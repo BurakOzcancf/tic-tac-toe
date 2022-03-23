@@ -5,51 +5,67 @@ const Main = () => {
     const [first, setfirst] = React.useState("X")
     const [res, setRes] = React.useState("")
 
+    function restart() {
+        if (first.includes("X")) {
+            setfirst("O")
+        }
+        if (first.includes("O")||first==="Tie") {
+            setfirst("X")
+        }
+        list.map(item => item.value = "")
+        setRes("")
+        
+    }
     function checkRows() {
-        if ((list[0].value && list[1].value && list[2].value) && (list[0].value === list[1].value && list[0].value === list[2].value)) {
+        if ((list[0].value !== "") &&
+            (list[0].value === list[1].value && list[0].value === list[2].value)) {
             setfirst(`${list[0].value} won`)
             setRes(`${list[0].value} won`)
+            
         }
-        else if ((list[3].value && list[4].value && list[5].value) &&
-            (list[3].value === list[4].value &&
-                list[3].value === list[5].value)) {
+        else if ((list[3].value!=="") &&
+            (list[3].value === list[4].value &&list[3].value === list[5].value)) {
             setfirst(`${list[3].value} won`)
             setRes(`${list[3].value} won`)
         }
-        else if ((list[6].value && list[7].value && list[8].value) && (list[6].value === list[7].value && list[6].value === list[8].value)) {
+        else if ((list[6].value !== "") &&
+            (list[6].value === list[7].value && list[6].value === list[8].value)) {
              setfirst(`${list[6].value} won`)
              setRes(`${list[6].value} won`)
         } 
     }
     function checkColumns() {
-        if ((list[0].value && list[3].value && list[6].value) && (list[0].value === list[3].value && list[0].value === list[6].value)) {
+        if ((list[0].value !== "") &&
+            (list[0].value === list[3].value && list[0].value === list[6].value)) {
             setfirst(`${list[0].value} won`)
             setRes(`${list[0].value} won`)
         }
-        else if ((list[1].value && list[4].value && list[7].value) &&
-            (list[1].value === list[4].value &&
-                list[1].value === list[7].value)) {
+        else if ((list[1].value !== "") &&
+            (list[1].value === list[4].value && list[1].value === list[7].value)) {
             setfirst(`${list[1].value} won`)
             setRes(`${list[1].value} won`)
         }
-        else if ((list[2].value && list[5].value && list[8].value) && (list[2].value === list[5].value && list[2].value === list[8].value)) {
+        else if ((list[2].value !== "") &&
+            (list[2].value === list[5].value && list[2].value === list[8].value)) {
             setfirst(`${list[2].value} won`)
             setRes(`${list[2].value} won`)
         } 
     }
     function checkDiagonal() {
-        if ((list[0].value && list[4].value && list[8].value) && (list[0].value === list[4].value && list[0].value === list[8].value)) {
+        if ((list[0].value!=="") && (list[0].value === list[4].value && list[0].value === list[8].value)) {
             setfirst(`${list[0].value} won`)
             setRes(`${list[0].value} won`)
         }
-        else if ((list[2].value && list[4].value && list[6].value) && (list[2].value === list[4].value && list[2].value === list[6].value)) {
+        else if ((list[2].value!=="") && (list[2].value === list[4].value && list[2].value === list[6].value)) {
             setfirst(`${list[2].value} won`)
             setRes(`${list[2].value} won`)
         }
         
     }
     function checkTie() {
-        if (list[0].value && list[1].value && list[2].value && list[3].value && list[4].value && list[5].value && list[6].value && list[7].value && list[8].value) {
+        if (list[0].value && list[1].value && list[2].value &&
+            list[3].value && list[4].value && list[5].value &&
+            list[6].value && list[7].value && list[8].value) {
         setfirst("Tie")
         setRes("Tie")
         }
@@ -87,6 +103,7 @@ const Main = () => {
                 </div>
             )}
             </div>
+            <button className='TicTacToe__btn' onClick={restart}>Restart</button>
         </main>
     )    
 }

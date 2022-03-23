@@ -85,3 +85,12 @@ body {
   color: var(--Slightly-White);
   background-color: var(--Blue);
 }
+.TicTacToe__btn {
+  display: block;
+  margin: auto;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  color: var(--Blackish);
+  background-color: var(--Slightly-White);
+}
