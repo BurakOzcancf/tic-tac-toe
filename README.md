@@ -11,7 +11,6 @@
 - [My process](#my-process)
   - [Built with](#built-with)
   - [Tech I used](#tech-i-used)
-  - [Useful resources](#useful-resources)
 - [Author](#author)
 
 ## Overview
@@ -52,10 +51,6 @@ Tic-tac-toe is played on a three-by-three grid by two players, who alternately p
 - Flexbox
 - CSS Grid
 - BEM method
-
-### Useful resources
-
-- [React Forms](https://reactjs.org/docs/forms.html)
 
 ## Author
 
